@@ -7,7 +7,7 @@ class UserController {
     }
 
     async show(req, res) {
-        const user = await User.find({email: req.body.email});
+        const user = await User.find({email: req.body.email, password: req.body.password});
 
         return res.json(user);
     }
